@@ -90,6 +90,8 @@ public abstract class Part implements Serializable {
         this.products = products;
     }
 
+
+
     public String toString(){
         return this.name;
     }
@@ -108,3 +110,5 @@ public abstract class Part implements Serializable {
         return (int) (id ^ (id >>> 32));
     }
 }
+
+

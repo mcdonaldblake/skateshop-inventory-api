@@ -1,5 +1,6 @@
 package com.example.demo.bootstrap;
 
+import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
@@ -39,33 +40,55 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
+
+        if (partRepository.count()==0) {
+
+            OutsourcedPart wheels = new OutsourcedPart();
+            wheels.setName("Wheels (4 Pack");
+            wheels.setInv(5);
+            wheels.setPrice(20.0);
+            partRepository.save(wheels);
+
+            InhousePart bearings = new InhousePart();
+            bearings.setName("Bearings (2 Pack)");
+            bearings.setInv(5);
+            bearings.setPrice(30.0);
+            partRepository.save(bearings);
+
+            OutsourcedPart trucks  = new OutsourcedPart();
+            trucks.setName("Trucks  (2 Pack)");
+            trucks.setInv(5);
+            trucks.setPrice(40.0);
+            partRepository.save(trucks);
+
+            InhousePart deck  = new InhousePart();
+            deck.setName("Deck");
+            deck.setInv(5);
+            deck.setPrice(50.0);
+            partRepository.save(deck);
+
+            OutsourcedPart griptape = new OutsourcedPart();
+            griptape.setName("Griptape");
+            griptape.setInv(5);
+            griptape.setPrice(10.0);
+            partRepository.save(griptape);
+
         }
 
-        System.out.println(thePart.getCompanyName());
-        */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            System.out.println(part.getName()+" "+part.getCompanyName());
-        }
+        if (productRepository.count() == 0) {
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
+            Product streetboard = new Product("Street Board", 100.0, 20);
+            Product longboard = new Product("Long Board", 150.0, 10);
+            Product cruiser = new Product("Cruiser", 125.0, 8);
+            Product oldSchool = new Product("Old School Board", 110.0, 5);
+            Product miniBoard = new Product("Mini Board", 75.0, 5);
+
+            productRepository.save(streetboard);
+            productRepository.save(longboard);
+            productRepository.save(cruiser);
+            productRepository.save(miniBoard);
+            productRepository.save(oldSchool);
+        }
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
