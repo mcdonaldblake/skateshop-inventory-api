@@ -4,6 +4,7 @@ import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
+import com.example.demo.repositories.InhousePartRepository;
 import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
@@ -30,11 +31,13 @@ public class BootStrapData implements CommandLineRunner {
     private final ProductRepository productRepository;
 
     private final OutsourcedPartRepository outsourcedPartRepository;
+    private final InhousePartRepository inhousePartRepository;
 
-    public BootStrapData(PartRepository partRepository, ProductRepository productRepository, OutsourcedPartRepository outsourcedPartRepository) {
+    public BootStrapData(PartRepository partRepository, ProductRepository productRepository, OutsourcedPartRepository outsourcedPartRepository, InhousePartRepository inhousePartRepository) {
         this.partRepository = partRepository;
         this.productRepository = productRepository;
         this.outsourcedPartRepository=outsourcedPartRepository;
+        this.inhousePartRepository = inhousePartRepository;
     }
 
     @Override
@@ -47,31 +50,31 @@ public class BootStrapData implements CommandLineRunner {
             wheels.setName("Wheels (4 Pack");
             wheels.setInv(5);
             wheels.setPrice(20.0);
-            partRepository.save(wheels);
+            outsourcedPartRepository.save(wheels);
 
             InhousePart bearings = new InhousePart();
             bearings.setName("Bearings (2 Pack)");
             bearings.setInv(5);
             bearings.setPrice(30.0);
-            partRepository.save(bearings);
+            inhousePartRepository.save(bearings);
 
             OutsourcedPart trucks  = new OutsourcedPart();
             trucks.setName("Trucks  (2 Pack)");
             trucks.setInv(5);
             trucks.setPrice(40.0);
-            partRepository.save(trucks);
+            outsourcedPartRepository.save(trucks);
 
             InhousePart deck  = new InhousePart();
             deck.setName("Deck");
             deck.setInv(5);
             deck.setPrice(50.0);
-            partRepository.save(deck);
+            inhousePartRepository.save(deck);
 
             OutsourcedPart griptape = new OutsourcedPart();
             griptape.setName("Griptape");
             griptape.setInv(5);
             griptape.setPrice(10.0);
-            partRepository.save(griptape);
+            outsourcedPartRepository.save(griptape);
 
         }
 

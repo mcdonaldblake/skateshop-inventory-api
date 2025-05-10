@@ -21,6 +21,11 @@ I added Inhouse and OutSourced parts and products in bootstrap file in the BootS
 • The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
 
+I added the "Buy now" button to mainscreen.html on line 87. In AddProductController on line 37/38 I injected the productRepository dependency.
+In AddProductController from lines 181-197 the buyProduct method that is responsible for sending you to productNotPurchased.html page if inventory
+is empty and to productPurchased.html if inventory is greater than zero. The Method will also decrement the product purchased inventory by 1.
+I also created the productPurchased.html and productNotPurchased.html in templates folder that will tell the user if product was purchased or not.
+
 
 ### G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
