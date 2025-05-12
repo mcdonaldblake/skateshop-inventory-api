@@ -35,6 +35,15 @@ I also created the productPurchased.html and productNotPurchased.html in templat
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
 
 
+In mainscreen.html on lines 40-41 and 50-51 I added A min and max inventory for parts table. In Parts class on lines 33-36 I added error message if min or max inv
+is less than 0. Also in parts class lines 93-108 I added getters and setters for min and max inv. In bootstrapdata starting on line 53
+I added setters for min and max inventory of all sample parts. In inhousedpartform.hmtl on lines 24-37 I added min and max lines
+to the form and also text lines to add if min or max has error and did same thing in outsourcedpart.html on lines 25-37.
+In validators folder I added InventoryValidator class and validInventory annotation type that validates that inventory is between
+min and max and will give error message if it is not. In application.properties I updated datasource.url on line 6 to update database.
+
+
+
 ### H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
