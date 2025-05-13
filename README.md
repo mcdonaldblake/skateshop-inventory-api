@@ -62,5 +62,7 @@ and getMaxInv in Parts class.
 
 ### J.  Remove the class files for any unused validators in order to clean your code.
 
+Deleted the deletePartValidator because it was not used anywhere in the project.
+
 
 ### K.  Demonstrate professional communication in the content and presentation of your submission.
