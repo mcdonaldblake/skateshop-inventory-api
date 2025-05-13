@@ -49,6 +49,10 @@ min and max and will give error message if it is not. In application.properties 
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
 
+In validators folder I added InventoryValidator class and validInventory annotation type that validates that inventory is between
+min and max and will give error message if it is not. In EnufPartsValidator from lines 37-51 I added if statement that will
+give error message if either updating or adding a product causes the associated parts to drop below minimum inventory.
+
 
 ### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
