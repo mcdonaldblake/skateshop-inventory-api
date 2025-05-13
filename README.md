@@ -56,6 +56,9 @@ give error message if either updating or adding a product causes the associated 
 
 ### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
+In the PartsTest file from lines 94-113 I added 2 unit tests that verify correctness of getters and setters for getMinInv
+and getMaxInv in Parts class.
+
 
 ### J.  Remove the class files for any unused validators in order to clean your code.
 
